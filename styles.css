@@ -114,7 +114,7 @@ header {
     text-align: center;
 }
 
-.project-one-row, .project-two-row, .project-three-row {
+.project-one-row, .project-two-row, .project-three-row, .project-four-row {
     display: flex;
     justify-content: space-evenly;
     margin: 2.5em 1.5em 9em 3em;
@@ -262,12 +262,12 @@ footer a:hover {
     margin: 5em 5em;
 }
 
-.terms-container h2, h3 {
+.terms-container, h2, h3 {
     text-align: center;
     padding-bottom: 1em;
 }
 
-.terms-title, .agreement, .ip-rights, .user-representation, .prohibited-activites, .privacy-policy, .contact {
+.terms-title, .agreement, .ip-rights, .user-representation, .prohibited-activites, .contact {
     margin: 4em 0;
 }
 
@@ -277,6 +277,10 @@ footer a:hover {
 
 .terms p {
     padding: 0.5em;
+}
+
+.policy-changes, .information-collected {
+    padding: 0.5em 0 0.5em 0;
 }
 
 .prohibited-list li {
