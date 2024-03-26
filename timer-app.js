@@ -22,6 +22,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
   setInterval(updateCurrentTime, 1000);
 
+  function eveningToneTestAlert() {
+    const now = new Date();
+    var currentHour = now.getHours();
+    var currentMinute = now.getMinutes();
+
+    if (currentHour == 18 && currentMinute == 43) {
+      if (!alertShown) {
+        setAlertTheme();
+        alert("It's 1800hrs! Perform evening tone test.");
+        resetAlertTheme(); // You can reset the theme after the alert is dismissed if needed
+        alertShown = true; // Assuming alertShown is a variable tracking whether the alert is currently shown
+      }
+    }
+  }
+  setInterval(eveningToneTestAlert, 60000);
+
   // Start the incident timer
   startButton.addEventListener('click', () => {
     if (incidentTimer !== null) {
@@ -37,18 +53,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
       // Check if 10 minutes have passed
       if (minutesPassed > 0 && minutesPassed % 10 === 0) {
         if (!alertShown) {
-          playAudio()
-          // alert('10 minutes have passed!');
-          // Instead of showing an alert, change the background color or something of the page and play the audio.
-          isAudioPlaying = true;
-          alertShown = true; // Set the flag to true after showing the alert
-          alertBackgroundElement.className = "bg-danger"
-          stopButton.className = "btn btn-outline-dark"
+          setAlertTheme();
         }
       } else {
         resetAlertTheme()
-        alertShown = false;
-        isAudioPlaying = false; // Reset the flag if not within the 10-minute interval
       }
     }, 1000); // Check every second
   });
@@ -81,6 +89,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function resetAlertTheme() {
     alertBackgroundElement.className = "";
     stopButton.className = "btn btn-danger";
+    isAudioPlaying = false;
+  }
+
+  function setAlertTheme() {
+    alertBackgroundElement.className = "bg-danger"
+    stopButton.className = "btn btn-outline-dark"
+    isAudioPlaying = true;
+    playAudio()
   }
   // Log the time of the tap
   logButton.addEventListener('click', () => {

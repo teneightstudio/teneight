@@ -259,16 +259,16 @@ footer a:hover {
 
 
 .terms-container {
-    margin: 5em 5em;
+    margin: 1em 20em;
 }
 
 .terms-container, h2, h3 {
     text-align: center;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
 }
 
 .terms-title, .agreement, .ip-rights, .user-representation, .prohibited-activites, .contact {
-    margin: 4em 0;
+    margin: 2.5em 0;
 }
 
 .terms-date {
