@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirect Page</title>
+<script>
+window.onload = function() {
+    let baseURL = "https://www.patreon.com/oauth2/authorize";
+    let responseType = "code";
+    let clientID = "gjX4w9BLUOUryBfZnBENFF3GjTjc4nGpriDSZhuuJku3XvuShv03uy5871M_32MK";
+    let redirectURI = "https://teneightstudios.net";
+
+// Construct the reusable URL
+    let url = `${baseURL}?response_type=${responseType}&client_id=${clientID}&redirect_uri=${redirectURI}`;
+  // Redirect to the specified URL
+  window.open("www.patreon.com/oauth2/authorize?response_type=code&client_id=gjX4w9BLUOUryBfZnBENFF3GjTjc4nGpriDSZhuuJku3XvuShv03uy5871M_32MK&redirect_uri=https://teneightstudios.net/", "_blank")
+};
+</script>
+</head>
+<body>
+<!-- Optional: You can add a message for users who have JavaScript disabled -->
+<p>If you are not redirected automatically, <a href="https://example.com/specified-url">click here</a>.</p>
+</body>
+</html>
